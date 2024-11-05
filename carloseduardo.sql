@@ -43,4 +43,5 @@ INSERT INTO reservas (id_hospede, id_quarto, data_check_in, data_check_out) VALU
 (1, 3, '2024-05-12', ''),
 (3, 2, '2024-02-17', '');
 
-
+SELECT
+    
