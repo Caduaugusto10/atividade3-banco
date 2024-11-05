@@ -82,3 +82,21 @@ RIGHT JOIN
     hospedes h ON r.id_hospede = h.id_hospede
 LEFT JOIN
     quartos q ON r.id_quarto = q.id_quarto;
+
+SELECT
+    r.id_reserva,
+    h.nome,
+    r.data_check_in,
+    r.data_check_out,
+    r.id_quarto,
+    r.id_hospede,
+    q.numero_quarto,
+    q.valor AS valor_quarto
+FROM
+    quartos q  
+LEFT JOIN
+    reservas r ON q.id_quarto = r.id_quarto
+LEFT JOIN
+    hospedes h ON r.id_hospede = h.id_hospede
+WHERE
+    r.id_reserva IS NULL;
