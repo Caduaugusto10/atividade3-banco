@@ -64,4 +64,21 @@ FROM
 JOIN
     hospedes h ON r.id_hospede = h.id_hospede
 JOIN
-    quartos q ON r.id_quarto = q.id_quarto
+    quartos q ON r.id_quarto = q.id_quarto;
+
+SELECT
+    r.id_reserva,
+    h.nome,
+    h.email,
+    r.data_check_in,
+    r.data_check_out,
+    r.id_quarto,
+    r.id_hospede,
+    q.numero_quarto,
+    q.valor AS valor_quarto
+FROM
+    reservas r 
+RIGHT JOIN
+    hospedes h ON r.id_hospede = h.id_hospede
+LEFT JOIN
+    quartos q ON r.id_quarto = q.id_quarto;
